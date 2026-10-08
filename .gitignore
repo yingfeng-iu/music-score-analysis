@@ -153,11 +153,21 @@ activemq-data/
 .env
 .envrc
 .venv
+.venv/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Local analysis and notebook scratch files
+*.html.tmp
+notebooks/executed/
+outputs/scratch/
+
+# Future OMR/model downloads (not part of Milestone A)
+models/
+downloads/
 
 # Spyder project settings
 .spyderproject

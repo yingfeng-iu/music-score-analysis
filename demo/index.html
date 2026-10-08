@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Music Score Analysis Explorer</title>
+<style>
+:root{--ink:#18201d;--muted:#59645f;--paper:#fbfaf5;--green:#195f4b;--gold:#d79a31;--line:#d9ded8}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+header,main,footer{max-width:1120px;margin:auto;padding:2rem} header{padding-top:5rem;padding-bottom:4rem}
+h1{font:clamp(2.7rem,7vw,5.7rem)/.95 Georgia,serif;max-width:850px;margin:.25rem 0 1.5rem} h2{font:2.2rem Georgia,serif;margin-top:3rem} h3{font:1.8rem Georgia,serif;margin:.1rem 0}
+.lede{font-size:1.25rem;max-width:760px} .eyebrow,.tag{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:750;color:var(--green)}
+.method{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin:2rem 0} .method div{padding:1rem;border:1px solid var(--line);background:white;text-align:center} .method b{display:block;color:var(--gold)}
+.notice{border-left:5px solid var(--gold);padding:1rem 1.25rem;background:#fff7e7}
+.score-card{background:white;border:1px solid var(--line);padding:clamp(1.2rem,4vw,2.3rem);margin:1.5rem 0 3rem;box-shadow:0 10px 30px #17251f0a}
+.card-heading{display:flex;justify-content:space-between;gap:1rem;align-items:start} .source-link{color:var(--green);font-weight:700}
+.evidence{background:#17251f;color:white;padding:1rem 1.25rem;margin:1.5rem 0} .evidence span,.estimate span{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:#c7e5d9} .evidence p{font:1.2rem Georgia,serif;word-spacing:.35rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)} .facts div{background:white;padding:.8rem} dt{color:var(--muted);font-size:.8rem;text-transform:uppercase} dd{margin:0;font-weight:700}
+.estimate{background:#edf5f1;padding:1rem;margin:1.5rem 0} .estimate span{color:var(--green)} .estimate strong,.estimate small{display:block}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:2rem} figcaption{font-weight:750;margin-bottom:.8rem} .bar-row{display:grid;grid-template-columns:4.3rem 1fr 2rem;gap:.5rem;align-items:center;font-size:.82rem;margin:.3rem 0} .track{height:.75rem;background:#edf0ed} .track i{display:block;height:100%;background:var(--green)}
+table{width:100%;border-collapse:collapse;background:white} th,td{padding:.8rem;text-align:left;border-bottom:1px solid var(--line)} thead th{color:var(--muted);font-size:.78rem;text-transform:uppercase} .limitations{background:#eee9dd;padding:1.5rem}
+footer{color:var(--muted);font-size:.9rem} small{color:var(--muted)}
+@media(max-width:720px){.method{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.charts{grid-template-columns:1fr}.card-heading{display:block}}
+</style></head><body>
+<header><p class="eyebrow">Milestone A · Symbolic analysis first</p><h1>What can a music score tell us before AI interpretation?</h1>
+<p class="lede">Three tiny, known MusicXML examples make the evidence trail visible: encoded notation becomes explainable measurements, then a modest comparison.</p></header>
+<main><section><h2>Method</h2><div class="method"><div><b>1</b>Known MusicXML</div><div><b>2</b>Parse notation</div><div><b>3</b>Count features</div><div><b>4</b>Compare proportions</div><div><b>5</b>Human review</div></div>
+<p class="notice"><strong>No OMR or LLM is used here.</strong> These original synthetic fixtures prove the analysis path; they do not represent archival material or recognition accuracy.</p></section>
+<section><h2>Score analyses</h2>
+      <article class="score-card" id="low-register-study">
+        <div class="card-heading">
+          <div><p class="eyebrow">Synthetic MusicXML fixture</p><h3>Low Register Study</h3>
+          <p>Music Score Analysis Explorer</p></div>
+          <a class="source-link" href="../samples/low-register-study.musicxml">MusicXML source</a>
+        </div>
+        <div class="evidence"><span>Notation evidence</span><p>F3 · A3 · C4 · B-3 · F3</p>
+          <small>First written pitches in score order; a compact preview, not engraved notation.</small></div>
+        <dl class="facts">
+          <div><dt>Parts</dt><dd>Low melody</dd></div>
+          <div><dt>Measures</dt><dd>3</dd></div>
+          <div><dt>Meter</dt><dd>2/4</dd></div>
+          <div><dt>Key signature</dt><dd>1 flat</dd></div>
+          <div><dt>Notes</dt><dd>5</dd></div>
+          <div><dt>Written range</dt><dd>F3 to C4</dd></div>
+        </dl>
+        <div class="estimate"><span>Computed estimate</span><strong>F major <small>(correlation 0.664)</small></strong>
+          <small>Algorithmic key estimate; not the same as the encoded key signature.</small></div>
+        <div class="charts">
+          <figure><figcaption>Written pitch-class counts</figcaption><div class="bar-row"><span>C</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>C#/D♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>D</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>D#/E♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>E</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>F</span><div class="track"><i style="width:100.0%"></i></div><b>2</b></div><div class="bar-row"><span>F#/G♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>G</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>G#/A♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>A</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>A#/B♭</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>B</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div></figure>
+          <figure><figcaption>Notated durations (quarter-note units)</figcaption><div class="bar-row"><span>1.0</span><div class="track"><i style="width:100.0%"></i></div><b>4</b></div><div class="bar-row"><span>2.0</span><div class="track"><i style="width:25.0%"></i></div><b>1</b></div></figure>
+        </div>
+      </article>
+      <article class="score-card" id="stepwise-study">
+        <div class="card-heading">
+          <div><p class="eyebrow">Synthetic MusicXML fixture</p><h3>Stepwise Study</h3>
+          <p>Music Score Analysis Explorer</p></div>
+          <a class="source-link" href="../samples/stepwise-study.musicxml">MusicXML source</a>
+        </div>
+        <div class="evidence"><span>Notation evidence</span><p>C4 · D4 · E4 · F4 · G4 · A4 · B4 · C5</p>
+          <small>First written pitches in score order; a compact preview, not engraved notation.</small></div>
+        <dl class="facts">
+          <div><dt>Parts</dt><dd>Melody</dd></div>
+          <div><dt>Measures</dt><dd>2</dd></div>
+          <div><dt>Meter</dt><dd>4/4</dd></div>
+          <div><dt>Key signature</dt><dd>No sharps or flats</dd></div>
+          <div><dt>Notes</dt><dd>8</dd></div>
+          <div><dt>Written range</dt><dd>C4 to C5</dd></div>
+        </dl>
+        <div class="estimate"><span>Computed estimate</span><strong>a minor <small>(correlation 0.824)</small></strong>
+          <small>Algorithmic key estimate; not the same as the encoded key signature.</small></div>
+        <div class="charts">
+          <figure><figcaption>Written pitch-class counts</figcaption><div class="bar-row"><span>C</span><div class="track"><i style="width:100.0%"></i></div><b>2</b></div><div class="bar-row"><span>C#/D♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>D</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>D#/E♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>E</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>F</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>F#/G♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>G</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>G#/A♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>A</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div><div class="bar-row"><span>A#/B♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>B</span><div class="track"><i style="width:50.0%"></i></div><b>1</b></div></figure>
+          <figure><figcaption>Notated durations (quarter-note units)</figcaption><div class="bar-row"><span>1.0</span><div class="track"><i style="width:100.0%"></i></div><b>8</b></div></figure>
+        </div>
+      </article>
+      <article class="score-card" id="waltz-arpeggio">
+        <div class="card-heading">
+          <div><p class="eyebrow">Synthetic MusicXML fixture</p><h3>Waltz Arpeggio</h3>
+          <p>Music Score Analysis Explorer</p></div>
+          <a class="source-link" href="../samples/waltz-arpeggio.musicxml">MusicXML source</a>
+        </div>
+        <div class="evidence"><span>Notation evidence</span><p>G4 · B4 · D5 · B4 · G4 · D4 · G4 · A4 · B4</p>
+          <small>First written pitches in score order; a compact preview, not engraved notation.</small></div>
+        <dl class="facts">
+          <div><dt>Parts</dt><dd>Melody</dd></div>
+          <div><dt>Measures</dt><dd>2</dd></div>
+          <div><dt>Meter</dt><dd>3/4</dd></div>
+          <div><dt>Key signature</dt><dd>1 sharp</dd></div>
+          <div><dt>Notes</dt><dd>9</dd></div>
+          <div><dt>Written range</dt><dd>D4 to D5</dd></div>
+        </dl>
+        <div class="estimate"><span>Computed estimate</span><strong>G major <small>(correlation 0.828)</small></strong>
+          <small>Algorithmic key estimate; not the same as the encoded key signature.</small></div>
+        <div class="charts">
+          <figure><figcaption>Written pitch-class counts</figcaption><div class="bar-row"><span>C</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>C#/D♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>D</span><div class="track"><i style="width:66.7%"></i></div><b>2</b></div><div class="bar-row"><span>D#/E♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>E</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>F</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>F#/G♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>G</span><div class="track"><i style="width:100.0%"></i></div><b>3</b></div><div class="bar-row"><span>G#/A♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>A</span><div class="track"><i style="width:33.3%"></i></div><b>1</b></div><div class="bar-row"><span>A#/B♭</span><div class="track"><i style="width:0.0%"></i></div><b>0</b></div><div class="bar-row"><span>B</span><div class="track"><i style="width:100.0%"></i></div><b>3</b></div></figure>
+          <figure><figcaption>Notated durations (quarter-note units)</figcaption><div class="bar-row"><span>0.5</span><div class="track"><i style="width:100.0%"></i></div><b>6</b></div><div class="bar-row"><span>1.0</span><div class="track"><i style="width:50.0%"></i></div><b>3</b></div></figure>
+        </div>
+      </article></section>
+<section><h2>Comparison</h2><p>“Short notes” means written durations below one quarter note. Distinct pitch classes ignore octave. Both definitions are intentionally simple and visible.</p>
+<table><thead><tr><th>Work</th><th>Notes</th><th>Short notes</th><th>Pitch classes</th></tr></thead><tbody><tr><th>Low Register Study</th><td>5</td><td>0%</td><td>4</td></tr><tr><th>Stepwise Study</th><td>8</td><td>0%</td><td>7</td></tr><tr><th>Waltz Arpeggio</th><td>9</td><td>67%</td><td>4</td></tr></tbody></table>
+<h3>Evidence-based observations</h3><ul><li>Waltz Arpeggio has 67% notes shorter than a quarter note, compared with 0% in Low Register Study.</li><li>Stepwise Study uses the most distinct written pitch classes in this sample (7).</li></ul><p><small>These observations describe only the displayed fixtures. They are not claims about style, quality, provenance, or influence.</small></p></section>
+<section class="limitations"><h2>Limits and next questions</h2><ul><li>Written pitches are not converted for transposing instruments.</li><li>A key signature is encoded notation; the named key is an algorithmic estimate.</li><li>Pitch and duration distributions discard order, harmony, articulation, text, and cultural context.</li><li>Synthetic success does not predict OMR quality on printed or handwritten scans.</li></ul>
+<p><strong>What would you want to search for in 17,000 scores?</strong> Concrete scholarly questions should determine which features—and which validation—come next.</p></section>
+<details><summary>Embedded machine-readable analysis</summary><pre>{&quot;scores&quot;: [{&quot;id&quot;: &quot;low-register-study&quot;, &quot;source_file&quot;: &quot;low-register-study.musicxml&quot;, &quot;title&quot;: &quot;Low Register Study&quot;, &quot;composer&quot;: &quot;Music Score Analysis Explorer&quot;, &quot;parts&quot;: [{&quot;label&quot;: &quot;Low melody&quot;, &quot;note_count&quot;: 5, &quot;monophonic&quot;: true}], &quot;measure_count&quot;: 3, &quot;time_signatures&quot;: [&quot;2/4&quot;], &quot;key_signatures&quot;: [&quot;1 flat&quot;], &quot;note_count&quot;: 5, &quot;chord_count&quot;: 0, &quot;written_pitch_range&quot;: {&quot;lowest&quot;: &quot;F3&quot;, &quot;highest&quot;: &quot;C4&quot;}, &quot;pitch_class_counts&quot;: {&quot;C&quot;: 1, &quot;C#/D\u266d&quot;: 0, &quot;D&quot;: 0, &quot;D#/E\u266d&quot;: 0, &quot;E&quot;: 0, &quot;F&quot;: 2, &quot;F#/G\u266d&quot;: 0, &quot;G&quot;: 0, &quot;G#/A\u266d&quot;: 0, &quot;A&quot;: 1, &quot;A#/B\u266d&quot;: 1, &quot;B&quot;: 0}, &quot;duration_counts_quarter_notes&quot;: {&quot;1.0&quot;: 4, &quot;2.0&quot;: 1}, &quot;melodic_interval_counts&quot;: {&quot;M-2&quot;: 1, &quot;M3&quot;: 1, &quot;P-4&quot;: 1, &quot;m3&quot;: 1}, &quot;estimated_key&quot;: {&quot;name&quot;: &quot;F major&quot;, &quot;correlation&quot;: 0.664}, &quot;preview_pitches&quot;: [&quot;F3&quot;, &quot;A3&quot;, &quot;C4&quot;, &quot;B-3&quot;, &quot;F3&quot;], &quot;method_notes&quot;: [&quot;Counts and pitch range use written pitches, not concert-pitch conversion.&quot;, &quot;Melodic intervals are computed only for parts without encoded chords or voices.&quot;, &quot;Estimated key is music21&#x27;s algorithmic estimate, not an encoded fact.&quot;]}, {&quot;id&quot;: &quot;stepwise-study&quot;, &quot;source_file&quot;: &quot;stepwise-study.musicxml&quot;, &quot;title&quot;: &quot;Stepwise Study&quot;, &quot;composer&quot;: &quot;Music Score Analysis Explorer&quot;, &quot;parts&quot;: [{&quot;label&quot;: &quot;Melody&quot;, &quot;note_count&quot;: 8, &quot;monophonic&quot;: true}], &quot;measure_count&quot;: 2, &quot;time_signatures&quot;: [&quot;4/4&quot;], &quot;key_signatures&quot;: [&quot;No sharps or flats&quot;], &quot;note_count&quot;: 8, &quot;chord_count&quot;: 0, &quot;written_pitch_range&quot;: {&quot;lowest&quot;: &quot;C4&quot;, &quot;highest&quot;: &quot;C5&quot;}, &quot;pitch_class_counts&quot;: {&quot;C&quot;: 2, &quot;C#/D\u266d&quot;: 0, &quot;D&quot;: 1, &quot;D#/E\u266d&quot;: 0, &quot;E&quot;: 1, &quot;F&quot;: 1, &quot;F#/G\u266d&quot;: 0, &quot;G&quot;: 1, &quot;G#/A\u266d&quot;: 0, &quot;A&quot;: 1, &quot;A#/B\u266d&quot;: 0, &quot;B&quot;: 1}, &quot;duration_counts_quarter_notes&quot;: {&quot;1.0&quot;: 8}, &quot;melodic_interval_counts&quot;: {&quot;M2&quot;: 5, &quot;m2&quot;: 2}, &quot;estimated_key&quot;: {&quot;name&quot;: &quot;a minor&quot;, &quot;correlation&quot;: 0.824}, &quot;preview_pitches&quot;: [&quot;C4&quot;, &quot;D4&quot;, &quot;E4&quot;, &quot;F4&quot;, &quot;G4&quot;, &quot;A4&quot;, &quot;B4&quot;, &quot;C5&quot;], &quot;method_notes&quot;: [&quot;Counts and pitch range use written pitches, not concert-pitch conversion.&quot;, &quot;Melodic intervals are computed only for parts without encoded chords or voices.&quot;, &quot;Estimated key is music21&#x27;s algorithmic estimate, not an encoded fact.&quot;]}, {&quot;id&quot;: &quot;waltz-arpeggio&quot;, &quot;source_file&quot;: &quot;waltz-arpeggio.musicxml&quot;, &quot;title&quot;: &quot;Waltz Arpeggio&quot;, &quot;composer&quot;: &quot;Music Score Analysis Explorer&quot;, &quot;parts&quot;: [{&quot;label&quot;: &quot;Melody&quot;, &quot;note_count&quot;: 9, &quot;monophonic&quot;: true}], &quot;measure_count&quot;: 2, &quot;time_signatures&quot;: [&quot;3/4&quot;], &quot;key_signatures&quot;: [&quot;1 sharp&quot;], &quot;note_count&quot;: 9, &quot;chord_count&quot;: 0, &quot;written_pitch_range&quot;: {&quot;lowest&quot;: &quot;D4&quot;, &quot;highest&quot;: &quot;D5&quot;}, &quot;pitch_class_counts&quot;: {&quot;C&quot;: 0, &quot;C#/D\u266d&quot;: 0, &quot;D&quot;: 2, &quot;D#/E\u266d&quot;: 0, &quot;E&quot;: 0, &quot;F&quot;: 0, &quot;F#/G\u266d&quot;: 0, &quot;G&quot;: 3, &quot;G#/A\u266d&quot;: 0, &quot;A&quot;: 1, &quot;A#/B\u266d&quot;: 0, &quot;B&quot;: 3}, &quot;duration_counts_quarter_notes&quot;: {&quot;0.5&quot;: 6, &quot;1.0&quot;: 3}, &quot;melodic_interval_counts&quot;: {&quot;M-3&quot;: 1, &quot;M2&quot;: 2, &quot;M3&quot;: 1, &quot;P-4&quot;: 1, &quot;P4&quot;: 1, &quot;m-3&quot;: 1, &quot;m3&quot;: 1}, &quot;estimated_key&quot;: {&quot;name&quot;: &quot;G major&quot;, &quot;correlation&quot;: 0.828}, &quot;preview_pitches&quot;: [&quot;G4&quot;, &quot;B4&quot;, &quot;D5&quot;, &quot;B4&quot;, &quot;G4&quot;, &quot;D4&quot;, &quot;G4&quot;, &quot;A4&quot;, &quot;B4&quot;], &quot;method_notes&quot;: [&quot;Counts and pitch range use written pitches, not concert-pitch conversion.&quot;, &quot;Melodic intervals are computed only for parts without encoded chords or voices.&quot;, &quot;Estimated key is music21&#x27;s algorithmic estimate, not an encoded fact.&quot;]}], &quot;comparison&quot;: {&quot;rows&quot;: [{&quot;id&quot;: &quot;low-register-study&quot;, &quot;title&quot;: &quot;Low Register Study&quot;, &quot;note_count&quot;: 5, &quot;short_note_proportion&quot;: 0.0, &quot;distinct_pitch_classes&quot;: 4}, {&quot;id&quot;: &quot;stepwise-study&quot;, &quot;title&quot;: &quot;Stepwise Study&quot;, &quot;note_count&quot;: 8, &quot;short_note_proportion&quot;: 0.0, &quot;distinct_pitch_classes&quot;: 7}, {&quot;id&quot;: &quot;waltz-arpeggio&quot;, &quot;title&quot;: &quot;Waltz Arpeggio&quot;, &quot;note_count&quot;: 9, &quot;short_note_proportion&quot;: 0.667, &quot;distinct_pitch_classes&quot;: 4}], &quot;observations&quot;: [&quot;Waltz Arpeggio has 67% notes shorter than a quarter note, compared with 0% in Low Register Study.&quot;, &quot;Stepwise Study uses the most distinct written pitch classes in this sample (7).&quot;]}}</pre></details></main>
+<footer>Generated from the repository's MusicXML fixtures with music21. See README.md and samples/SOURCES.md for method and provenance.</footer></body></html>

@@ -1,0 +1,239 @@
+{
+  "method": "music21 written-pitch analysis",
+  "scores": [
+    {
+      "id": "low-register-study",
+      "source_file": "low-register-study.musicxml",
+      "title": "Low Register Study",
+      "composer": "Music Score Analysis Explorer",
+      "parts": [
+        {
+          "label": "Low melody",
+          "note_count": 5,
+          "monophonic": true
+        }
+      ],
+      "measure_count": 3,
+      "time_signatures": [
+        "2/4"
+      ],
+      "key_signatures": [
+        "1 flat"
+      ],
+      "note_count": 5,
+      "chord_count": 0,
+      "written_pitch_range": {
+        "lowest": "F3",
+        "highest": "C4"
+      },
+      "pitch_class_counts": {
+        "C": 1,
+        "C#/D♭": 0,
+        "D": 0,
+        "D#/E♭": 0,
+        "E": 0,
+        "F": 2,
+        "F#/G♭": 0,
+        "G": 0,
+        "G#/A♭": 0,
+        "A": 1,
+        "A#/B♭": 1,
+        "B": 0
+      },
+      "duration_counts_quarter_notes": {
+        "1.0": 4,
+        "2.0": 1
+      },
+      "melodic_interval_counts": {
+        "M-2": 1,
+        "M3": 1,
+        "P-4": 1,
+        "m3": 1
+      },
+      "estimated_key": {
+        "name": "F major",
+        "correlation": 0.664
+      },
+      "preview_pitches": [
+        "F3",
+        "A3",
+        "C4",
+        "B-3",
+        "F3"
+      ],
+      "method_notes": [
+        "Counts and pitch range use written pitches, not concert-pitch conversion.",
+        "Melodic intervals are computed only for parts without encoded chords or voices.",
+        "Estimated key is music21's algorithmic estimate, not an encoded fact."
+      ]
+    },
+    {
+      "id": "stepwise-study",
+      "source_file": "stepwise-study.musicxml",
+      "title": "Stepwise Study",
+      "composer": "Music Score Analysis Explorer",
+      "parts": [
+        {
+          "label": "Melody",
+          "note_count": 8,
+          "monophonic": true
+        }
+      ],
+      "measure_count": 2,
+      "time_signatures": [
+        "4/4"
+      ],
+      "key_signatures": [
+        "No sharps or flats"
+      ],
+      "note_count": 8,
+      "chord_count": 0,
+      "written_pitch_range": {
+        "lowest": "C4",
+        "highest": "C5"
+      },
+      "pitch_class_counts": {
+        "C": 2,
+        "C#/D♭": 0,
+        "D": 1,
+        "D#/E♭": 0,
+        "E": 1,
+        "F": 1,
+        "F#/G♭": 0,
+        "G": 1,
+        "G#/A♭": 0,
+        "A": 1,
+        "A#/B♭": 0,
+        "B": 1
+      },
+      "duration_counts_quarter_notes": {
+        "1.0": 8
+      },
+      "melodic_interval_counts": {
+        "M2": 5,
+        "m2": 2
+      },
+      "estimated_key": {
+        "name": "a minor",
+        "correlation": 0.824
+      },
+      "preview_pitches": [
+        "C4",
+        "D4",
+        "E4",
+        "F4",
+        "G4",
+        "A4",
+        "B4",
+        "C5"
+      ],
+      "method_notes": [
+        "Counts and pitch range use written pitches, not concert-pitch conversion.",
+        "Melodic intervals are computed only for parts without encoded chords or voices.",
+        "Estimated key is music21's algorithmic estimate, not an encoded fact."
+      ]
+    },
+    {
+      "id": "waltz-arpeggio",
+      "source_file": "waltz-arpeggio.musicxml",
+      "title": "Waltz Arpeggio",
+      "composer": "Music Score Analysis Explorer",
+      "parts": [
+        {
+          "label": "Melody",
+          "note_count": 9,
+          "monophonic": true
+        }
+      ],
+      "measure_count": 2,
+      "time_signatures": [
+        "3/4"
+      ],
+      "key_signatures": [
+        "1 sharp"
+      ],
+      "note_count": 9,
+      "chord_count": 0,
+      "written_pitch_range": {
+        "lowest": "D4",
+        "highest": "D5"
+      },
+      "pitch_class_counts": {
+        "C": 0,
+        "C#/D♭": 0,
+        "D": 2,
+        "D#/E♭": 0,
+        "E": 0,
+        "F": 0,
+        "F#/G♭": 0,
+        "G": 3,
+        "G#/A♭": 0,
+        "A": 1,
+        "A#/B♭": 0,
+        "B": 3
+      },
+      "duration_counts_quarter_notes": {
+        "0.5": 6,
+        "1.0": 3
+      },
+      "melodic_interval_counts": {
+        "M-3": 1,
+        "M2": 2,
+        "M3": 1,
+        "P-4": 1,
+        "P4": 1,
+        "m-3": 1,
+        "m3": 1
+      },
+      "estimated_key": {
+        "name": "G major",
+        "correlation": 0.828
+      },
+      "preview_pitches": [
+        "G4",
+        "B4",
+        "D5",
+        "B4",
+        "G4",
+        "D4",
+        "G4",
+        "A4",
+        "B4"
+      ],
+      "method_notes": [
+        "Counts and pitch range use written pitches, not concert-pitch conversion.",
+        "Melodic intervals are computed only for parts without encoded chords or voices.",
+        "Estimated key is music21's algorithmic estimate, not an encoded fact."
+      ]
+    }
+  ],
+  "comparison": {
+    "rows": [
+      {
+        "id": "low-register-study",
+        "title": "Low Register Study",
+        "note_count": 5,
+        "short_note_proportion": 0.0,
+        "distinct_pitch_classes": 4
+      },
+      {
+        "id": "stepwise-study",
+        "title": "Stepwise Study",
+        "note_count": 8,
+        "short_note_proportion": 0.0,
+        "distinct_pitch_classes": 7
+      },
+      {
+        "id": "waltz-arpeggio",
+        "title": "Waltz Arpeggio",
+        "note_count": 9,
+        "short_note_proportion": 0.667,
+        "distinct_pitch_classes": 4
+      }
+    ],
+    "observations": [
+      "Waltz Arpeggio has 67% notes shorter than a quarter note, compared with 0% in Low Register Study.",
+      "Stepwise Study uses the most distinct written pitch classes in this sample (7)."
+    ]
+  }
+}
