@@ -7,7 +7,7 @@
 
 A recent informal conversation with Javier Leon, Director of Latin American Music at Indiana University, identified an opportunity to investigate AI-assisted cataloging, analysis, and discovery for a collection described as approximately **17,000 music scores**. The collection reportedly includes printed and handwritten material; its precise inventory, digitization status, rights, formats, and catalog coverage have not yet been established. Existing descriptive cataloging may include composer, title, and date, while content-oriented musical descriptions and collection-wide analytical discovery are limited.
 
-This note explores how existing optical music recognition (OMR), computational musicology, machine learning, and large language models might help. It is a personal, exploratory technology study intended to support discussion with musicologists and collection stewards, not a commitment by IU, Javier, AMPAV, or Avalon/MCO. The central proposition is to **turn score images into reviewable musical evidence, then use that evidence for descriptive metadata and cross-collection discovery**. The feasibility and usefulness of this approach remain to be tested.
+This note explores how existing optical music recognition (OMR), computational musicology, machine learning, and large language models might help. It is a personal, exploratory technology study intended to support discussion with musicologists and collection stewards, not a commitment by IU Libraries, Music School, AMPAV, or Avalon/MCO. The central proposition is to **turn score images into reviewable musical evidence, then use that evidence for descriptive metadata and cross-collection discovery**. The feasibility and usefulness of this approach remain to be tested.
 
 ## Research questions and possible value
 
@@ -153,7 +153,7 @@ The demonstration should show:
 
 A meaningful negative result is acceptable: if OMR fails on a manuscript, show the failure honestly and demonstrate analysis on a valid pre-existing MusicXML score rather than silently substituting data.
 
-## Questions for Javier and prospective collaborators
+## Questions for prospective collaborators
 
 1. How many of the approximately 17,000 scores are digitized? Which file formats and scan qualities are available?
 2. What proportion is printed versus handwritten? Which notation systems, genres, dates, languages, and instrumentations occur?

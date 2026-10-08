@@ -1,4 +1,4 @@
-# Music Score AI Explorer — Prototype Implementation Brief for Codex
+# Music Score AI Explorer — Prototype Implementation Brief
 
 **Date:** 8 October 2026  
 **Project type:** Personal, public, exploratory proof of concept. Not an AMPAV implementation or an IU-sponsored project.  
@@ -19,7 +19,7 @@ The demo should remain useful **without any LLM API access** and **even if OMR f
 
 ## 2. Operating environment and constraints
 
-- Develop in **WSL/Linux**, in a **separate directory and Python virtual environment** from AMPAV. Use the existing developer's Codex installation as convenient, but do not import AMPAV agents, namespace packages, workflow phases, status/roadmap/summary machinery, Jira conventions, or core libraries.
+- Develop in **WSL/Linux**, in a **separate directory and Python virtual environment** from AMPAV. Use the existing developer's installation as convenient, but do not import AMPAV workflows, namespace packages, workflow phases, status/roadmap/summary machinery, Jira conventions, or core libraries.
 - Public personal GitHub repository; avoid IU-restricted materials, private scans, credentials, local paths, or licensed assets that cannot be redistributed. The repository URL has not been specified in this brief.
 - Prefer open-source, documented, actively usable tools. Review dependency and model licenses before redistribution or embedding in the project; do not copy third-party code or weights into the repository by default.
 - Keep implementation minimal, with direct Python functions/scripts, a notebook, and a static HTML export. Avoid service frameworks, databases, queues, generic pipelines, or elaborate abstraction layers.
@@ -116,7 +116,7 @@ outputs/                       # generated MusicXML / analysis JSON, if useful
 
 Adapt layout if simpler. Avoid duplicating large assets. Decide which generated artifacts should be committed based on whether they are needed for a self-contained public demonstration. Use `.gitignore` for local environments, caches, downloaded model files, and scratch outputs.
 
-## 6. Execution approach for Codex
+## 6. Execution approach
 
 1. **Inspect** the new repository and local WSL environment. Confirm Python version, package manager, rendering/OMR availability, and repo state; do not assume an AMPAV venv is appropriate.
 2. **Confirm sample rights** and choose a tiny, representative dataset. Start with music21's built-in corpus or other licensed symbolic examples if necessary, but prefer a score image with corresponding ground-truth MusicXML for OMR assessment.
