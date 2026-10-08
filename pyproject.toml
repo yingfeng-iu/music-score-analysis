@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "music-score-analysis"
+version = "0.1.0"
+description = "A small MusicXML analysis and static HTML demonstration"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+  "music21>=9.7,<10",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ipykernel>=6,<8",
+  "nbconvert>=7.16,<8",
+  "pytest>=8.3,<9",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
