@@ -20,7 +20,7 @@ The demo should remain useful **without any LLM API access** and **even if OMR f
 ## 2. Operating environment and constraints
 
 - Develop in **WSL/Linux**, in a **separate directory and Python virtual environment** from AMPAV. Use the existing developer's installation as convenient, but do not import AMPAV workflows, namespace packages, workflow phases, status/roadmap/summary machinery, Jira conventions, or core libraries.
-- Public personal GitHub repository; avoid IU-restricted materials, private scans, credentials, local paths, or licensed assets that cannot be redistributed. The repository URL has not been specified in this brief.
+- Public personal GitHub repository; avoid IU-restricted materials, private scans, credentials, local paths, or licensed assets that cannot be redistributed. The repository URL is https://github.com/yingfeng-iu/music-score-analysis.
 - Prefer open-source, documented, actively usable tools. Review dependency and model licenses before redistribution or embedding in the project; do not copy third-party code or weights into the repository by default.
 - Keep implementation minimal, with direct Python functions/scripts, a notebook, and a static HTML export. Avoid service frameworks, databases, queues, generic pipelines, or elaborate abstraction layers.
 - Record dependency versions and exact commands needed to reproduce the demo. No requirement for AMPAV-style retained native run manifests.

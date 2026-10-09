@@ -8,13 +8,13 @@ add uncertainty.
 
 ## View the demonstration
 
-Open [`demo/index.html`](demo/index.html) in an ordinary browser. It is a
-self-contained report: no server, Python installation, account, network
-connection, or API key is needed.
+## Demo
 
-GitHub displays the HTML source rather than the rendered report. From GitHub,
-download or clone the repository and open `demo/index.html` locally; public
-hosting is intentionally deferred.
+**[View the rendered prototype report](https://yingfeng-iu.github.io/music-score-analysis/)**, published through GitHub Pages.
+
+The report is self-contained and can also be viewed offline by opening
+[`demo/index.html`](demo/index.html) in a browser. No server, Python installation,
+account, network connection, or API key is required.
 
 The report analyzes three short original teaching fixtures and shows:
 
